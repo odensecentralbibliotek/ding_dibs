@@ -154,9 +154,6 @@ function ding_dibs_ding_provider() {
  */
 function ding_dibs_payment_prepare($amount, $params, $callback, $redirect = TRUE) {
   global $user;
-
-
-
   $params['payment_price'] = $amount;
   $params['api_module'] = 'ding_dibs';
   $params['api_delta'] = 1;
@@ -179,10 +176,6 @@ function ding_dibs_payment_prepare($amount, $params, $callback, $redirect = TRUE
     'customer_name' => $user->data['display_name'],
     // dibs module fills in missing data.
   );
-
-  //    dpm($user);
-  //  dpm($params);
-
   return dibs_payment_prepare($params, $redirect);
 }
 
