@@ -29,8 +29,6 @@ function ding_dibs_payment_get_url($amount, $params, $callback) {
     /*  $params['order_info_long'] = t('Payment of library dues: @debts', array('@debts' => implode(',', $params['params']['debt_ids'])));*/
   }
 
-  // dpm($params);
-
   $transaction_hash = ding_dibs_payment_prepare($amount, $params, $callback, FALSE);
 
   return 'payment/dibs/redirect/' . $transaction_hash;
