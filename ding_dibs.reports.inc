@@ -28,6 +28,8 @@ function ding_dibs_admin_reports() {
                         'payment_transaction_id',
                         'payment_time',
                         'customer_uid',
+			//pjo
+			'customer_name',
                         'order_info_short',
                         'payment_price',
                         'payment_status',
@@ -41,7 +43,9 @@ function ding_dibs_admin_reports() {
     array('data' => t('Order ID'), 'class' => 'payment'),
     array('data' => t('Transaction ID'), 'class' => 'payment'),
     array('data' => t('Date'), 'class' => 'payment'),
-    array('data' => t('User'), 'class' => 'payment'),
+    array('data' => t('UserId'), 'class' => 'payment'),
+    //pjo
+    array('data' => t('UserName'), 'class' => 'payment'),
     array('data' => t('Text'), 'class' => 'payment'),
     array('data' => t('Amount'), 'class' => 'payment'),
     array('data' => t('Cleared'), 'class' => 'payment'),
@@ -69,6 +73,8 @@ function ding_dibs_admin_reports() {
       array('data' => check_plain($record->payment_transaction_id), 'class' => 'payment'),
       array('data' => check_plain($record->payment_time), 'class' => 'payment'),
       array('data' => check_plain($record->customer_uid), 'class' => 'payment'),
+      // pjo
+      array('data' => check_plain($record->customer_name), 'class' => 'payment'),
       array('data' => check_plain($record->order_info_short), 'class' => 'payment'),
       array('data' => check_plain($record->payment_price), 'class' => 'payment'),
       array('data' => ( $record->payment_status ) ? t('yes') : t('no'), 'class' => 'payment'),
