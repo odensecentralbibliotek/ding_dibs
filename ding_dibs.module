@@ -177,7 +177,7 @@ function ding_dibs_payment_prepare($amount, $params, $callback, $redirect = TRUE
     // pjo adding info 
     // @todo; verify that name and email is actually shown on dibs admin
     'customer_name' => $user->data['display_name'],
-    'customer_email' => $user->mail;
+    'customer_email' => $user->mail,
     // dibs module fills in missing data.
   );
   return dibs_payment_prepare($params, $redirect);
