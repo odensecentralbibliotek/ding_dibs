@@ -169,11 +169,15 @@ function ding_dibs_payment_prepare($amount, $params, $callback, $redirect = TRUE
     $params['params']['session'] = session_id();
   }
 
+  dpm($user);
+
   $params += array(
     'order_info_short' => t('Payment of library dues'),
     'order_price_info' => array('Total' => $amount),
-    // pjo adding info
+    // pjo adding info 
+    // @todo; verify that name and email is actually shown on dibs admin
     'customer_name' => $user->data['display_name'],
+    'customer_email' => $user->mail;
     // dibs module fills in missing data.
   );
   return dibs_payment_prepare($params, $redirect);
