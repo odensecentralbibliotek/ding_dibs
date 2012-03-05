@@ -169,8 +169,6 @@ function ding_dibs_payment_prepare($amount, $params, $callback, $redirect = TRUE
     $params['params']['session'] = session_id();
   }
 
-  dpm($user);
-
   $params += array(
     'order_info_short' => t('Payment of library dues'),
     'order_price_info' => array('Total' => $amount),
