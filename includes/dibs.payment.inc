@@ -15,9 +15,8 @@ function ding_dibs_payment_get_url($amount, $params, $callback) {
     $params['order_info_long'][] = array(t('Title'),t('Date'),t('Amount'));
     foreach( $params['params']['debts'] as $key => $obj ) {
       // dpm((array)$params['params']['debts'][$key]);
-      $params['order_info_long'][] = array($obj->display_name, $obj->date, $obj->amount);      
-    }    
-
+      $params['order_info_long'][] = array($obj->display_name, $obj->date, $obj->amount . '.00');
+    }
     // pjo @TODO do a proper orderinfo here. like
     /*'order_info_long'     => array(
       array('Qty', 'Text', 'Price'),
