@@ -172,11 +172,7 @@ function ding_dibs_payment_prepare($amount, $params, $callback, $redirect = TRUE
 
   $params += array(
     'order_info_short' => t('Payment of library dues'),
-<<<<<<< HEAD
-    'order_price_info' => array('Total' => $amount),
-=======
     'order_price_info' => array('Total' => $amount . '.00'),
->>>>>>> hotfix/7.x-0.12+dbc.2.1
     // pjo adding info
     // @todo; verify that name and email is actually shown on dibs admin
     'customer_name' => $user->data['display_name'],
