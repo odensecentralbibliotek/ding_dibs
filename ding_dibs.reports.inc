@@ -38,8 +38,8 @@ function ding_dibs_admin_reports() {
                         'provider_payment_status',
                         'dibs_capture_status'))
     ->range($start*$num_per_page, $num_per_page)
-    ->orderBy('payment_order_id', 'DESC');
-  $result = $query->execute();
+    ->orderBy('payment_time', 'DESC');
+    $result = $query->execute();
 
   $header = array(
     array('data' => t('Order ID'), 'class' => 'payment'),
